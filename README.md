@@ -1,13 +1,13 @@
 # phonenumberparser-js
 RESTful API based on google's libphonenumber library.
 ***
-## How to use
-Clone repo:
+## How to set up
+Clone repository:
 ```
 git clone https://github.com/alexglazkov9/phonenumberparser-js.git
 ```
 Ensure that Node.js is installed on your system.
-Install all dependencies.
+Install all dependencies with the following command:
 ```
 npm install
 ```
@@ -19,3 +19,4 @@ To run tests use the following command:
 ```
 npm test
 ```
+***
