@@ -21,7 +21,7 @@ npm test
 ```
 ***
 ## How to use
-You can use browser to make GET requests or you can use any other web API development tool, such as Postman, to make GET and POST requests.
+You can use browser to make GET requests or you can use any web API development tool, such as Postman, to make GET and POST requests.
 
 API has two endpoints.
 
