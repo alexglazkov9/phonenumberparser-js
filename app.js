@@ -4,7 +4,11 @@ const phoneParser = require('./util');
 const app = express();
 app.use(bodyParser.text({ defaultCharset: 'base64', type: 'text/plain' }));
 
-
+app.get('/', function(req, res) {
+	res.sendFile('index.html', {
+		"root": __dirname
+	});
+});
 
 app.get('/api/phonenumbers/parse/text/:simpleText', function(req, res){
 	var text = req.params.simpleText;
