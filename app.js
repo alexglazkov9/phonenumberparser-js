@@ -4,7 +4,11 @@ const phoneParser = require('./util');
 const app = express();
 app.use(bodyParser.text({ defaultCharset: 'base64', type: 'text/plain' }));
 
-
+app.get('/', function(req, res) {
+	res.sendFile('index.html', {
+		"root": __dirname
+	});
+});
 
 app.get('/api/phonenumbers/parse/text/:simpleText', function(req, res){
 	var text = req.params.simpleText;
@@ -16,6 +20,6 @@ app.post('/api/phonenumbers/parse/file/', function(req, res){
 	res.status(200).json(phoneParser.findNumbers(text));
 });
 
-app.listen(3000, () => console.log('API is up and running.'));
+app.listen(process.env.PORT || 3000, () => console.log('API is up and running.'));
 
 module.exports = app;
