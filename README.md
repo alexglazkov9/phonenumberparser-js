@@ -23,12 +23,21 @@ npm test
 ## How to use
 You can use browser to make GET requests or you can use any web API development tool, such as Postman, to make GET and POST requests.
 
-API has two endpoints.
+API has three endpoints.
 
 ### GET
 ```
 localhost:3000/api/phonenumbers/parse/text/{TEXT_TO_PARSE}
 ```
+
+```
+localhost:3000/api/phonenumbers/url/{RESOURCE_AT_GIVEN_URL}
+```
+Example of parsing a resource at a given URL:
+```
+localhost:3000/api/phonenumbers/url/http%3A%2F%2Fexample.com%2F
+```
+
 ### POST
 For POST request ```Content-Type``` header must be ```text/plain``` and ```body``` must contain ```base64``` encoded text file.
 ```
@@ -36,4 +45,4 @@ localhost:3000/api/phonenumbers/parse/file
 ```
 
 
-Both endpoints return JSON formatted list of numbers.
+All endpoints return JSON formatted list of numbers.
