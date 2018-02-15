@@ -6,7 +6,7 @@ app.use(bodyParser.text({ defaultCharset: 'base64', type: 'text/plain' }));
 
 app.get('/', function(req, res) {
 	res.sendFile('index.html', {
-		"root": __dirname
+		'root': __dirname
 	});
 });
 
