@@ -44,5 +44,11 @@ For POST request ```Content-Type``` header must be ```text/plain``` and ```body`
 localhost:3000/api/phonenumbers/parse/file
 ```
 
-
 All endpoints return JSON formatted list of numbers.
+
+***
+
+## Heroku
+The website is up on [Heroku](https://murmuring-lake-42639.herokuapp.com)
+
+Please see this link on the official [Heroku guide](https://devcenter.heroku.com/articles/deploying-nodejs) to deploy it yourself.

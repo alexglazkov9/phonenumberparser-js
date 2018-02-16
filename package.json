@@ -4,6 +4,7 @@
   "description": "phone parser",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "mocha --recursive"
   },
@@ -35,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/alexglazkov9/phonenumberparser-js/issues"
   },
-  "homepage": "https://github.com/alexglazkov9/phonenumberparser-js#readme"
+  "homepage": "https://github.com/alexglazkov9/phonenumberparser-js#readme",
+  "engines": {
+    "node": "8.9.4"
+  }
 }
