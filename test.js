@@ -35,6 +35,30 @@ describe('API endpoint /api/phonenumbers/parse/text/', function(){
 	
 });
 
+describe('API endpoint /api/phonenumbers/url/', function(){
+	
+	it('Parsing www.google.com. Returns an empty list', function(){
+		return chai.request(app)
+			.get('/api/phonenumbers/url/http%3A%2F%2Fgoogle.com%2F')
+			.then(function(res){
+				expect(res).to.have.status(200);
+				expect(res.body).to.be.empty;
+			});
+	});
+
+	it('Parsing www.senecacollege.ca/contact. Returns (416) 491-5050, (416) 491-8811, (905) 833-1650', function(){
+		return chai.request(app)
+			.get('/api/phonenumbers/url/http%3A%2F%2Fsenecacollege.ca%2Fcontact%2F')
+			.then(function(res){
+				expect(res).to.have.status(200);
+				expect(res.body).to.include("(416) 491-5050",
+											"(416) 491-8811",
+											"(905) 833-1650");
+			});
+	});
+	
+});
+
 describe('API endpoint /api/phonenumbers/parse/file/', function(){
 	
 	it('Returns an empty list', function(){
