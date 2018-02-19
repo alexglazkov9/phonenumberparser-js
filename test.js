@@ -85,3 +85,40 @@ describe('API endpoint /api/phonenumbers/parse/file/', function(){
 	});
 	
 });
+
+describe('API endpoint /api/phonenumbers/parse/image/', function(){
+	
+	it('Parsing image: test_image_seneca_contacts.jpg', function(){
+		this.timeout(20000);
+		return chai.request(app)
+			.post('/api/phonenumbers/parse/image')
+			.attach('file', './images_for_testing/test_image_seneca_contacts.jpg')
+			.then(function(res){
+				expect(res).to.have.status(200);
+				expect(res.body).to.include("(416) 491-5050",
+											"(416) 491-8811",
+											"(905) 833-1650");
+			});
+	});
+	
+	it('Parsing image: test_image_zoo_contacts.jpg', function(){
+		this.timeout(20000);
+		return chai.request(app)
+			.post('/api/phonenumbers/parse/image/')
+			.attach('file', './images_for_testing/test_image_zoo_contacts.jpg')
+			.then(function(res){
+				expect(res).to.have.status(200);
+				expect(res.body).to.include("(416) 392-5900",
+											"(416) 392-5934",
+											"(416) 392-9114",
+											"(416) 392-9115",
+											"(416) 392-5962",
+											"(416) 392-4979",
+											"(416) 392-5940",
+											"(416) 392-5863",
+											"(416) 392-5947",
+											"(416) 392-5948");
+			});
+	});
+	
+});

@@ -23,7 +23,7 @@ npm test
 ## How to use
 You can use browser to make GET requests or you can use any web API development tool, such as Postman, to make GET and POST requests.
 
-API has three endpoints.
+API has four endpoints.
 
 ### GET
 ```
@@ -39,9 +39,15 @@ localhost:3000/api/phonenumbers/url/http%3A%2F%2Fexample.com%2F
 ```
 
 ### POST
-For POST request ```Content-Type``` header must be ```text/plain``` and ```body``` must contain ```base64``` encoded text file.
+For POST /api/phonenumbers/parse/file request ```Content-Type``` header must be ```text/plain``` and ```body``` must contain ```base64``` encoded text file.
 ```
 localhost:3000/api/phonenumbers/parse/file
+```
+
+For parsing images use POST /api/phonenumbers/parse/image request.     
+Note: OCR tool will try to extract text from the image; however, the result depends on the quality of the image.
+```
+localhost:3000/api/phonenumbers/parse/image
 ```
 
 All endpoints return JSON formatted list of numbers.
