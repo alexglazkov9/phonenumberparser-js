@@ -33,6 +33,14 @@ describe('API endpoint /api/phonenumbers/parse/text/', function(){
 			});
 	});
 	
+	it('Returns (416) 573-6322', function(){
+		return chai.request(app)
+			.get('/api/phonenumbers/parse/text/416.5SE.NECA')
+			.then(function(res){
+				expect(res).to.have.status(200);
+				expect(res.body).to.include("(416) 573-6322");
+			});
+	});
 });
 
 describe('API endpoint /api/phonenumbers/url/', function(){
@@ -71,7 +79,7 @@ describe('API endpoint /api/phonenumbers/parse/file/', function(){
 			});
 	});
 	
-	it('Parsing Seneca\'s "Contact Us" web page. Returns (416) 491-5050, (416) 491-8811, (905) 833-1650', function(){
+	it('Parsing Seneca\'s "Contact Us" web page. Returns (416) 491-5050, (416) 491-8811, (905) 833-1650, (416) 573-6322', function(){
 		return chai.request(app)
 			.post('/api/phonenumbers/parse/file')
 			.set('Content-Type', 'text/plain;charset=base64')
@@ -80,7 +88,8 @@ describe('API endpoint /api/phonenumbers/parse/file/', function(){
 				expect(res).to.have.status(200);
 				expect(res.body).to.include("(416) 491-5050",
 											"(416) 491-8811",
-											"(905) 833-1650");
+											"(905) 833-1650",
+							   				"(416) 573-6322");
 			});
 	});
 	
