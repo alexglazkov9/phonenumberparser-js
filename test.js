@@ -94,8 +94,6 @@ describe('API endpoint /api/phonenumbers/parse/file/', function(){
 	});
 	
 });
-<<<<<<< HEAD
-=======
 
 describe('API endpoint /api/phonenumbers/parse/image/', function(){
 	
@@ -133,4 +131,3 @@ describe('API endpoint /api/phonenumbers/parse/image/', function(){
 	});
 	
 });
->>>>>>> master
