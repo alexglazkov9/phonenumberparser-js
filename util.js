@@ -58,16 +58,13 @@ exports.findNumbers = function findNumbers(text){
 			while(i < text.length){
 				if(possibleChars.indexOf(text[i]) !== -1){
 					phoneNumber += text[i];
-					//console.log("Parse!");
 					i++;
 				}
 				else if(phoneNumber.length >= 3 && phoneLetters.test(text[i]) == true){
 					phoneNumber += convertToNumber(text[i]);
-					//console.log("Got in!");
 					i++;
 				}
 				else{
-					//console.log(phoneLetters.test(text[i]) + "failed!");
 					break;
 				}
 			}
